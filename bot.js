@@ -13,13 +13,13 @@ client.on('ready', () => {
 // commands
 
 client.on('message', message => {
-    if (message === PREFIX + 'ping') {
+    if (message.content === PREFIX + 'ping') {
     	message.reply('pong!');
   	}
 });
 
 client.on('message', message => {
-    if (message === PREFIX + 'bun') {
+    if (message.content === PREFIX + 'bun') {
     	message.reply('https://cdn.discordapp.com/attachments/475314976819642368/475360270596964378/unknown.png');
   	}
 });
