@@ -1,3 +1,5 @@
+// setup
+
 const Discord = require('discord.js');
 const PREFIX = "c.";
 
@@ -8,14 +10,16 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
+// commands
+
 client.on('message', message => {
-    if (message.content === 'c.ping') {
+    if (message === PREFIX + 'ping') {
     	message.reply('pong!');
   	}
 });
 
 client.on('message', message => {
-    if (message.content === 'c.bun') {
+    if (message === PREFIX + 'bun') {
     	message.reply('https://cdn.discordapp.com/attachments/475314976819642368/475360270596964378/unknown.png');
   	}
 });
