@@ -2,9 +2,9 @@
   "name": "C1NN4-B0T",
   "description": "The Novelcraft Lounge's very own bot!",
   "version": "0.0.0",
-  "main": "C1NN4-B0T.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node C1NN4-B0T.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "discord.js": "11.1.0",
