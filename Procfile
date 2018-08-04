@@ -1,1 +1,1 @@
-worker: node C1NN4-B0T.js
+worker: node bot.js
