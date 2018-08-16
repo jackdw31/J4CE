@@ -1,6 +1,8 @@
 // setup /////////////////////////////////////
 
-const { Discord, Client, Attachment } = require('discord.js');
+const Discord = require("discord.js");
+const Client = require("discord.js");
+const Attachment = require("discord.js");
 const PREFIX = "c.";
 var client = new Discord.Client();
 client.on("ready", () => {
