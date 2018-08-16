@@ -35,8 +35,7 @@ client.on("message", message => {
 
 client.on("message", message => {
 	if (message.content === PREFIX + "bun") {
-	const attachment = new Attachment("https://cdn.discordapp.com/attachments/475314976819642368/475360270596964378/unknown.png");
-		message.channel.send(attachment);
+	message.channel.send("https://cdn.discordapp.com/attachments/475314976819642368/475360270596964378/unknown.png");
   	}
 });
 
