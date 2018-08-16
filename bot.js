@@ -20,8 +20,8 @@ var d20 = ["**[1]**      ","**[2]**      ","**[3]**      ","**[4]**      ","**[5
 
 // commands //////////////////////////////////
 
-bot.on("message", function(message) {
-	if (message.author.equals(bot.user)) return;
+client.on("message", function(message) {
+	if (message.author.equals(client.user)) return;
 	if (!message.content.startsWith(PREFIX)) return;
 	var args = message.content.substring(PREFIX.length).split(" ");
 	switch (args[0].toLowerCase()) {
