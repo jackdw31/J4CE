@@ -3,7 +3,6 @@
 const Discord = require('discord.js');
 const PREFIX = "c.";
 var client = new Discord.Client();
-var servers = {};
 
 // console ready
 
@@ -14,7 +13,6 @@ client.on('ready', () => {
 // command cases
 
 client.on("message", function(message) {
-	if (message.author.equals(client.user)) return;
 	if (!message.content.startsWith(PREFIX)) return;
 	var args = message.content.substring(PREFIX.length).split(" ");
 	switch (args[0].toLowerCase()) {
