@@ -1,8 +1,8 @@
 // setup /////////////////////////////////////
 
 const Discord = require("discord.js");
-const Attachment = require("discord.js");
-const PREFIX = "c.";
+const PREFIX = "roll.";
+const math = require("math-expression-evaluator");
 var client = new Discord.Client();
 client.on("ready", () => {
 	console.log("I am ready!");
@@ -12,16 +12,41 @@ client.on("ready", () => {
 
 client.on("message", message => {
 	if (message.content === PREFIX + "help") {
-	var embed = new Discord.RichEmbed()
-		.setTitle("**What can C1NN4-B0T do?**")
-		.addField("**c.help**", "Displays list of commands")
-		.addField("**c.ping**", "Pong!")
-		.addField("**c.bun**", "Reminds you of your cinnamon bun-ness!")
-		.setColor(0xFBA635)
-		.setFooter("- The Novelcraft Lounge -")
-	message.channel.sendEmbed(embed);
+		var embed = new Discord.RichEmbed()
+			.setTitle("**What can J4CE do?**")
+			.addField("Coin", "Flips a coin, resulting in either HEADS or TAILS.")
+			.addField("Fate", "Rolls 4 FATE dice, which each show a plus, minus, or blank face.")
+			.addField("_D4", "Rolls a number of D4's")
+			.addField("_D6", "Rolls a number of D6's")
+			.addField("_D8", "Rolls a number of D8's")
+			.addField("_D10", "Rolls a number of D10's")
+			.addField("_D12", "Rolls a number of D12's")
+			.addField("_D20", "Rolls a number of D20's")
+			.setColor(0x0094FF)
+			.setFooter("Wherever you see an underscore, this can be replaced with a number between 1 and 4 to decide the number of dice to roll.")
+		message.channel.sendEmbed(embed);
 	}
 });
+
+// math //////////////////////////////////////
+
+exports.run = (client, message, args, tools) => {
+	const embed = new Discord.MessageEmbed()
+        .setColor(0x0094FF);
+    if (!args[0]) {
+        embed.setFooter('Please input an expression.');
+        return message.channel.send(embed);
+    }
+    let result;
+    try {
+        result = math.eval(args.join(' '));
+    } catch (e) {
+        result = 'Error: "Invalid Input"';
+    }
+    embed.addField('Input', `\`\`\`js\n${args.join(' ')}\`\`\``)
+         .addField('Output', `\`\`\`js\n${result}\`\`\``);
+    message.channel.send(embed);
+}
 
 // ping //////////////////////////////////////
 
@@ -30,23 +55,7 @@ client.on("message", message => {
 	message.channel.send("pong!");
 	}
 });
-
-// bun ///////////////////////////////////////
-
-client.on("message", message => {
-	if (message.content === PREFIX + "bun") {
-	message.channel.send("https://cdn.discordapp.com/attachments/475314976819642368/475360270596964378/unknown.png");
-  	}
-});
-
-// asdf //////////////////////////////////////
-
-client.on("message", message => {
-	if (message.content === PREFIX + "asdf") {
-	message.channel.send("Hello cinnamon buns! <:CinnamonBun:473972103025131540> \n For NaNoWriMo this year, we’re taking you on a quest! There will be monsters to slay, gold to earn, but most importantly, novels to write!\n\nAny good quest needs adventurers! Below, you can react to an emoji to choose your class! The classes available:\n\n:dizzy: **Mage!** Cast spells! Invoke the elements!\n:shield: **Warrior!** Shield allies! Decimate your foes!\n:knife: **Rogue!** Trickery! Deceit! Stick to the shadows!\n:guitar: **Bard!** Boost allies’ spirits! Play legendary solos!\n\nBy levelling up in the Discord, and by helping to slay the daily boss, you can receive new class titles, showing your prowess and mastery over words!\n\nEach day a new boss fight will unlock at **12PM GMT**, with a word count required to beat it. For the next 24 hours, you can write as much as you wish, and can submit the number of words you completed that day - even if you didn’t meet the day’s goal. At the end of the month, everyone’s progress will be tallied up and ranked!\n\nWho will lead the raid? And who will conquer their novel? You decide! Happy writing cinnamon bun! <:CinnamonBun:473972103025131540>");
-	}
-});
-			     
+     
 // token login ///////////////////////////////
 
 client.login(process.env.BOT_TOKEN);
