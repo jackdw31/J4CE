@@ -39,6 +39,28 @@ client.on("message", message => {
   	}
 });
 
+// asdf //////////////////////////////////////
+
+client.on("message", message => {
+	if (message.content === PREFIX + "asdf") {
+	message.channel.send("Hello cinnamon buns! :CinnamonBun:
+For NaNoWriMo this year, we’re taking you on a quest! There will be monsters to slay, gold to earn, but most importantly, novels to write!
+
+Any good quest needs adventurers! Below, you can react to an emoji to choose your class! The classes available:
+
+:dizzy: **Mage!** Cast spells! Invoke the elements!
+:shield: **Warrior!** Shield allies! Decimate your foes!
+:knife: **Rogue!** Trickery! Deceit! Stick to the shadows! 
+:guitar: **Bard!** Boost allies’ spirits! Play legendary solos!
+
+By levelling up in the Discord, and by helping to slay the daily boss, you can receive new class titles, showing your prowess and mastery over words!
+
+Each day a new boss fight will unlock at **12PM BST**, with a word count required to beat it. Between 12PM and 12AM you can write as much as you wish, and can submit the number of words you completed that day - even if you didn’t meet the day’s goal. At the end of the month, everyone’s progress will be tallied up and ranked!
+
+Who will lead the raid? And who will conquer their novel? You decide! Happy writing cinnamon bun! :CinnamonBun:");
+	}
+});
+			     
 // token login ///////////////////////////////
 
 client.login(process.env.BOT_TOKEN);
