@@ -17,7 +17,7 @@ client.on('message', message => {
 		.addField("**c.ping**", "Pong!")
 		.addField("**c.bun**", "Reminds you of your cinnamon bun-ness!")
 		.setColor(0xFBA635)
-		.setFooter("*The Novelcraft Lounge*")
+		.setFooter("- The Novelcraft Lounge -")
 	message.channel.sendEmbed(embed);
 	}
 });
