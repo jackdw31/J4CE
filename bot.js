@@ -13,11 +13,11 @@ client.on('message', message => {
 	if (message.content === PREFIX + 'help') {
 	var embed = new Discord.RichEmbed()
 		.setTitle("**What can C1NN4-B0T do?**")
-		.addField("c.help", "Displays list of commands")
-		.addField("c.ping", "Pong!")
-		.addField("c.bun", "Reminds you of your cinnamon bun-ness!")
+		.addField("**c.help**", "Displays list of commands")
+		.addField("**c.ping**", "Pong!")
+		.addField("**c.bun**", "Reminds you of your cinnamon bun-ness!")
 		.setColor(0xFBA635)
-		.setFooter("The Novelcraft Lounge")
+		.setFooter("*The Novelcraft Lounge*")
 	message.channel.sendEmbed(embed);
 	}
 });
